@@ -49,8 +49,9 @@ We've implemented a custom F1 score calculation that takes into account the spec
 5. **Optical Character Recognition (OCR)**: Incorporating OCR techniques could help in directly reading numeric values and units from product images.
 6. **Few-shot Learning**: Given the potential for new product categories and units, exploring few-shot learning techniques could help the model adapt more quickly to new entities.
 
-## 5. Conclusion
+## 5. Contributors
 
-The current implementation provides a solid foundation for the image entity extraction task. By leveraging a state-of-the-art Vision Transformer model and adapting it for our specific use case, we've created a system capable of predicting entity units from product images.
-
-However, there's significant room for improvement, particularly in the areas of numeric value prediction and handling the multi-faceted nature of the problem (entity type, numeric value, and unit prediction). Future work should focus on these areas to create a more comprehensive and accurate entity extraction system.
+-Om Prakash Behera
+-Sai Nikhita Palisetty
+-Sayali Khamitkar
+-Harsh Maurya
