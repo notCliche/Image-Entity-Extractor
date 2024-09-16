@@ -51,7 +51,7 @@ We've implemented a custom F1 score calculation that takes into account the spec
 
 ## 5. Contributors
 
--Om Prakash Behera
--Sai Nikhita Palisetty
--Sayali Khamitkar
--Harsh Maurya
+  -Om Prakash Behera
+  -Sai Nikhita Palisetty
+  -Sayali Khamitkar
+  -Harsh Maurya
