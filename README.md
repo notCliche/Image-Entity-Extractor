@@ -50,8 +50,7 @@ We've implemented a custom F1 score calculation that takes into account the spec
 6. **Few-shot Learning**: Given the potential for new product categories and units, exploring few-shot learning techniques could help the model adapt more quickly to new entities.
 
 ## 5. Contributors
-
-  -Om Prakash Behera
-  -Sai Nikhita Palisetty
-  -Sayali Khamitkar
-  -Harsh Maurya
+- Om Prakash Behera
+- Sai Nikhita Palisetty
+- Sayali Khamitkar
+- Harsh Maurya
