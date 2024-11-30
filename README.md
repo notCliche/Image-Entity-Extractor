@@ -1,26 +1,26 @@
 # Image-Entity-Extractor
 # ML Approach Documentation
 
-## 1. Problem Overview
+## Problem Overview
 
 The task at hand is to extract entity values from product images. These entities include physical attributes such as width, depth, height, weight, voltage, wattage, and volume. This capability is crucial for e-commerce platforms, content moderation, and various other applications where detailed product information is essential.
 
-## 2. ML Approach
+## ML Approach
 
-### 2.1 Model Architecture
+### Model Architecture
 
 For this task, we've chosen to use a Vision Transformer (ViT) model. Specifically, we're using the `google/vit-base-patch16-224` pretrained model from the Hugging Face Transformers library.
 
 Vision Transformers have shown remarkable performance in image classification tasks and can be adapted for our specific use case of entity extraction. The ViT model processes images as a sequence of fixed-size patches, applying self-attention mechanisms to capture global dependencies in the image.
 
-### 2.2 Model Adaptation
+### Model Adaptation
 
 While the original ViT model is designed for image classification, we've adapted it for our multi-label classification task:
 
 1. We've replaced the final classification layer with a new linear layer that outputs probabilities for each possible unit across all entity types.
 2. The number of output units is determined by summing the number of possible units for each entity type as defined in our `ENTITY_UNIT_MAP`.
 
-### 2.3 Data Preprocessing
+### Data Preprocessing
 
 Images are preprocessed using the following steps:
 
@@ -28,19 +28,19 @@ Images are preprocessed using the following steps:
 2. Converting to RGB format to ensure consistency.
 3. Normalizing pixel values using mean and standard deviation values typical for ImageNet-trained models.
 
-### 2.4 Inference
+### Inference
 
 During inference:
 1. The image is preprocessed and passed through the model.
 2. The model outputs logits for each possible unit.
 3. We select the unit with the highest probability.
 
-## 3. Evaluation
+## Evaluation
 
 The model's performance is evaluated using the F1 score, which is the harmonic mean of precision and recall. This metric is particularly useful for imbalanced datasets and multi-label classification problems.
 We've implemented a custom F1 score calculation that takes into account the specific requirements of our task, including handling empty predictions and mismatched units.
 
-## 4. Challenges and Future Improvements
+## Challenges and Future Improvements
 
 1. **Number Prediction**: The current implementation uses random number generation as a placeholder. Developing an accurate method for predicting the numeric value is a crucial next step.
 2. **Multi-task Learning**: Instead of treating this as a single multi-label classification problem, we could explore multi-task learning approaches where we have separate outputs for entity type and unit prediction.
